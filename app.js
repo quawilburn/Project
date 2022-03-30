@@ -3,6 +3,12 @@ const mongoose = require("mongoose")
 
 const app = express()
 
+//Middlewares
+
+app.use("/", (req, res, next) => {
+  res.send("Connected to application")
+})
+
 mongoose
   .connect(
     "mongodb+srv://new:s6TngXDBZBqLqXlU@cluster0.lq8dw.mongodb.net/Bookstore?retryWrites=true&w=majority"
