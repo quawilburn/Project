@@ -1,5 +1,6 @@
 const express = require("express")
 const mongoose = require("mongoose")
+const router = require("./routes/book-routes")
 
 const app = express()
 
@@ -8,6 +9,8 @@ const app = express()
 app.use("/", (req, res, next) => {
   res.send("Connected to application")
 })
+
+app.use("/books", router)
 
 mongoose
   .connect(
