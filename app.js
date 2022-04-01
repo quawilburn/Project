@@ -5,7 +5,7 @@ const router = require("./routes/book-routes")
 const app = express()
 
 //Middlewares
-
+app.use(express.json())
 app.use("/", (req, res, next) => {
   res.send("Connected to application")
 })
