@@ -1,12 +1,12 @@
 const router = require("express").Router()
 // const BookModel = require("../model/Book-model")
 // const Product = require("../model/Book-model")
-const booksController = require("../middleware/book-middleware")
+const booksMiddleware = require("../middleware/book-middleware")
 
-router.get("/", booksController.getAllBooks)
-router.post("/", booksController.addBook)
-router.get("/:id", booksController.getById)
-router.put("/:id", booksController.updateBook)
-router.delete("/:id", booksController.deleteBook)
+router.get("/", booksMiddleware.getAllBooks)
+router.post("/", booksMiddleware.addBook)
+router.get("/:id", booksMiddleware.getById)
+router.put("/:id", booksMiddleware.updateBook)
+router.delete("/:id", booksMiddleware.deleteBook)
 
 module.exports = router
