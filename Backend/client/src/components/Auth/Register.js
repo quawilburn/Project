@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+
 class Register extends Component {
   constructor() {
     super()
@@ -15,13 +17,16 @@ class Register extends Component {
     this.setState({ [e.target.id]: e.target.value })
   }
   onSubmit = (e) => {
+    let navigate = useNavigate()
     e.preventDefault()
+
     const newUser = {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2,
     }
+    navigate("/login")
     console.log(newUser)
   }
   render() {

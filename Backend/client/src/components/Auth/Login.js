@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+
 class Login extends Component {
   constructor() {
     super()
@@ -13,11 +15,13 @@ class Login extends Component {
     this.setState({ [e.target.id]: e.target.value })
   }
   onSubmit = (e) => {
+    let navigate = useNavigate()
     e.preventDefault()
     const userData = {
       email: this.state.email,
       password: this.state.password,
     }
+    navigate("/books")
     console.log(userData)
   }
   render() {
